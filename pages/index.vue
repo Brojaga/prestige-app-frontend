@@ -1,15 +1,18 @@
 <template>
   <div class="container">
     <navbar />
+    <modal />
   </div>
 </template>
 
 <script>
 import navbar from '~/components/navbar.vue'
+import modal from '~/components/modal.vue'
 
 export default {
   components: {
-    navbar
+    navbar,
+    modal
   }
 }
 </script>

@@ -1,14 +1,14 @@
   <template>
     <div class="center examplex">
-      <vs-navbar color="#7d33ff" text-white square center-collapsed v-model="active">
+      <vs-navbar color="#7d33ff" text-white square center-collapsed>
         <template #left>
-        <vs-navbar-item :active="active == 'matchup'" id="matchup">
+        <vs-navbar-item  id="matchup" to="/">
           Matchup
         </vs-navbar-item>
-        <vs-navbar-item :active="active == 'rankings'" id="rankings">
-          <a href="/rankingsPage">Rankings</a>
+        <vs-navbar-item  id="rankings" to="/rankingsPage">
+          Rankings
         </vs-navbar-item>
-        <vs-navbar-item :active="active == 'about'" id="about">
+        <vs-navbar-item  id="about" to="/about">
           About
         </vs-navbar-item>
         </template>
@@ -19,9 +19,7 @@
 
 <script>
 export default {
-    data:() => ({
-      active: 'matchup'
-    })
+    
 }
 </script>
 
