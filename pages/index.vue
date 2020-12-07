@@ -1,19 +1,23 @@
 <template>
   <div class="container">
     <navbar />
-    <modal />
+    <card :name="name"></card>
   </div>
 </template>
 
 <script>
 import navbar from '~/components/navbar.vue'
-import modal from '~/components/modal.vue'
+import card from '~/components/card.vue'
 
 export default {
   components: {
     navbar,
-    modal
-  }
+    card
+  },
+  data:() => ({
+        active: 0,
+        name: "School"
+      })
 }
 </script>
 
