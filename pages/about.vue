@@ -8,7 +8,7 @@
       <div class="min_marg">
         <body class="non-title">
           <p class="description">
-            This site is a tool to allow people to view the public opinion of tech companies and universities through crowdsourced ranking.
+            This site is a tool to allow people to view the public opinion of tech companies and universities (WIP) through crowdsourced ranking.
             This is done by allowing users to choose between two random institutions in a matchup and tallying the total wins and losses for each institution.
             Institutions with a high win/loss rate and statistically significant number of votes are viewed as having a high public opinion.
           </p>
@@ -45,6 +45,8 @@
             </tr>
 
           </table>
+          <br>
+          <br>
         </body>
       </div>
     </div>

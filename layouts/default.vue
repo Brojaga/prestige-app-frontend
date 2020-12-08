@@ -1,13 +1,18 @@
 <template>
   <div>
     <Nuxt />
-    <footer>
+    <footer class="footer">
       <a href="https://clearbit.com">Logos provided by Clearbit</a>
     </footer>
   </div>
 </template>
 
 <style>
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
 html {
   font-family:
     'Source Sans Pro',

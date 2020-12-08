@@ -1,7 +1,13 @@
 <template>
   <div class="container">
-    <navbar fixed/>
+    <navbar/>
     <div class="grid">
+      <vs-row justify="center" id="static">
+        <vs-col>
+          <br>
+          <br>
+        </vs-col>
+      </vs-row>
       <vs-row justify="center" id="static">
         <vs-col>
           <h1>Which would you rather work for?</h1>
