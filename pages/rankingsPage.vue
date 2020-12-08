@@ -1,16 +1,7 @@
 <template>
   <div class="container">
-    <navbar />
+    <navbar fixed class="nbar"/>
     <div class="main">
-      <!-- <h1>
-        HELLO THIS IS THE RANKINGS PAGE
-      </h1>
-      <ul>
-        <li v-for="company in rankedCompanies" :key="company.ranking" class="list">
-          {{ company.company }}
-          {{ company.winrate }}
-        </li>
-      </ul> -->
     
       <template>
         <div class="center">
@@ -42,7 +33,7 @@
                   {{ company.winrate }}
                 </vs-td>
                 <vs-td>
-                  {{ company.rank }}
+                  {{ company.ranking }}
                 </vs-td>
               </vs-tr>
             </template>
@@ -78,14 +69,18 @@ export default {
   },
   data:() => ({
     page: 1,
-    max: 5,
+    max: 10,
+    search: '',
     rankedCompanies: []
   })
 }
 </script>
 
 <style>
-.list {
-  list-style: none;
+.main {
+  margin-top: 45px;
+}
+.nbar {
+  padding-bottom: 40px;
 }
 </style>
