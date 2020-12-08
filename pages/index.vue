@@ -4,26 +4,17 @@
     <div class="grid">
       <vs-row justify="center" id="static">
         <vs-col>
-          <h1>Which do you think is more prestigious?</h1>
+          <h1>Which would you rather work for?</h1>
         </vs-col>
       </vs-row>
       <vs-row justify="center">
-        <vs-col v-for=" index in 2" :key="index" w="4" id="card" @click="sendResults()">
-          <card id="matchup" v-if="index === 1" :companyName="matchup.company1" :image="matchup.image1"></card>
-          <card id="matchup" v-if="index === 2" :companyName="matchup.company2" :image="matchup.image2"></card>
+        <vs-col v-for=" index in 2" :key="index" w="4" id="card">
+          <card id="matchup" v-if="index === 1" :companyName="matchup.company1" :image="matchup.image1" @click.native="sendResults(index)"></card>
+          <card id="matchup" v-if="index === 2" :companyName="matchup.company2" :image="matchup.image2" @click.native="sendResults(index)"></card>
         </vs-col>
       </vs-row>
       <vs-row justify="center" id="static">
         <vs-col offset="4">
-          <vs-button
-            id="matcher"
-            gradient
-            :active="active == 1" 
-            @click="beginMatchup(); active = 1;"
-            size="xl"
-          >
-            Get Matchup
-          </vs-button>
         </vs-col>
       </vs-row>
     </div>
@@ -36,18 +27,36 @@ import card from '~/components/card.vue'
 import axios from 'axios'
 
 export default {
+  mounted() {
+    this.openLoading()
+  },
+  async created() {
+    try {
+        const res = await axios.get('https://jlql7x0v0i.execute-api.us-west-2.amazonaws.com/staging/matchup')
+        this.matchup = res.data;
+      } catch (error) {
+        console.log(error)
+      }
+  },
   components: {
     navbar,
     card
   },
   data:() => ({
         active: 0,
-        matchup: {
-          winner: 0
-        }
+        matchup: {}
       }),
   methods: {
-    async beginMatchup() {
+    openLoading() {
+      const loading = this.$vs.loading({
+        type: 'points',
+        color: '#f542bf'
+      })
+      setTimeout(() => {
+        loading.close()
+      }, 1000)
+    },
+    async newMatchup() {
       try {
         const res = await axios.get('https://jlql7x0v0i.execute-api.us-west-2.amazonaws.com/staging/matchup')
         this.matchup = res.data;
@@ -55,12 +64,20 @@ export default {
         console.log(error)
       }
     },
-    async sendResults() {
-      const results = { verification: matchup.verification, winner: matchup.winner };
+    async sendResults(index) {
+      const config = {
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
+      console.log("I got called!")
+      console.log(this.matchup.verificationCode)
+      const results = { verificationCode: this.matchup.verificationCode, winner: index };
       try {
-        const response = await axios.post("https://jlql7x0v0i.execute-api.us-west-2.amazonaws.com/staging/matchup", results);
+        const response = await axios.post("https://jlql7x0v0i.execute-api.us-west-2.amazonaws.com/staging/matchup", results, config);
+        console.log(this.matchup.verificationCode)
         console.log(response)
-        beginMatchup();
+        this.newMatchup();
       } catch (error) {
         console.log(error)
       }

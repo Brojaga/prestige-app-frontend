@@ -1,6 +1,9 @@
 <template>
   <div>
     <Nuxt />
+    <footer>
+      <a href="https://clearbit.com">Logos provided by Clearbit</a>
+    </footer>
   </div>
 </template>
 
