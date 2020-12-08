@@ -1,27 +1,33 @@
 <template>
   <div id="center grid">
-      <vs-row>
-        <vs-col vs-type="flex" vs-justify="flex-start" vs-align="center" w="6">
-          <vs-button
-            gradient
-            :active="active == 1"
-            @click="active = 1"
-            size="xl"
-          >
-            {{ name }}
-          </vs-button>
-        </vs-col>
-      </vs-row>
-    </div>
+      <vs-card>
+    <template #title>
+      <h3>{{ companyName }}</h3>
+    </template>
+    <template #img>
+      <img :src=image alt="">
+    </template>
+    <template #text>
+      <p>
+      </p>
+    </template>
+  </vs-card>    
+  </div>
 </template>
 
 <script>
 export default {
   props: {
-    name: {
+    companyName: {
       type: String
-    } 
-  }
+    },
+    image: {
+      type: String
+    }},
+  data:() => ({
+        posts: [],
+        active: 0,
+      }) 
 }
 </script>
 
