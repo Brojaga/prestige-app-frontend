@@ -18,21 +18,33 @@
           <p class="contactInfoHead">
             Contact us:
           </p>
-          <p class="contactInfoBody">
-            Alex Leska
-            <a href="https://github.com/leskaa"><img alt="GitHub" src="../assets/github.png" width=20 height=20></a>
-            <a href="mailto: alexander.leska@ndsu.edu"><img alt="Email" src="../assets/email.png" width=25 height=20></a>
-          </p>
-          <p class="contactInfoBody">
-            Jack Law
-            <a href="https://github.com/Brojaga"><img alt="GitHub" src="../assets/github.png" width=20 height=20></a>
-            <a href="mailto: jack.law@ndsu.edu"><img alt="Email" src="../assets/email.png" width=25 height=20></a>
-          </p>
-          <p class="contactInfoBody">
-            Jacob Smith
-            <a href="https://github.com/JacobWilliamSmith"><img alt="GitHub" src="../assets/github.png" width=20 height=20></a>
-            <a href="mailto: jacob.william.smith@ndsu.edu"><img alt="Email" src="../assets/email.png" width=25 height=20></a>
-          </p>
+          <table class="contactInfoTable">
+
+            <tr>
+              <td class="contactInfoBody">Jack Law</td>
+              <td class="contactInfoBody">
+                <a href="https://github.com/Brojaga"><img alt="GitHub" src="../assets/github.png" width=20 height=20></a>
+                <a href="mailto: jack.law@ndsu.edu"><img alt="Email" src="../assets/email.png" width=25 height=18></a>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="contactInfoBody">Alex Leska</td>
+              <td class="contactInfoBody">
+                <a href="https://github.com/leskaa"><img alt="GitHub" src="../assets/github.png" width=20 height=20></a>
+                <a href="mailto: alexander.leska@ndsu.edu"><img alt="Email" src="../assets/email.png" width=25 height=18></a>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="contactInfoBody">Jacob Smith</td>
+              <td class="contactInfoBody">
+                <a href="https://github.com/JacobWilliamSmith"><img alt="GitHub" src="../assets/github.png" width=20 height=20></a>
+                <a href="mailto: jacob.william.smith@ndsu.edu"><img alt="Email" src="../assets/email.png" width=25 height=18></a>
+              </td>
+            </tr>
+
+          </table>
         </body>
       </div>
     </div>
@@ -82,14 +94,21 @@ export default {
   .contactInfoHead {
     text-align: center;
     font-weight: 500;
-    font-size: 1.7rem;
+    font-size: 1.9rem;
     margin-top: 80px;
     margin-bottom: 5px;
   }
 
+  .contactInfoTable {
+    text-align: left;
+    font-size: 1.6rem;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
   .contactInfoBody {
-    text-align: center;
-    font-size: 1.5rem;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 
   .description {
@@ -101,4 +120,5 @@ export default {
     padding-left: 5%;
     padding-right: 5%;
   }
+
 </style>
