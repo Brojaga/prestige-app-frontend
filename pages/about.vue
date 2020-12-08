@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <navbar />
+    <navbar fixed/>
     <div class="main">
       <h1 class="title">
         About PrestigeApp:
@@ -60,6 +60,11 @@ export default {
 </script>
 
 <style>
+
+  .container {
+    min-height: 10vh;
+  }
+
   .title {
   font-family:
     'Quicksand',

@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <navbar />
+    <navbar fixed/>
     <div class="grid">
       <vs-row justify="center" id="static">
         <vs-col>
